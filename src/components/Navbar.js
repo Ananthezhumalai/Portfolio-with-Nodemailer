@@ -4,7 +4,6 @@ import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -27,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
     background: "#222",
     margin: 0,
   },
-  avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    margin: theme.spacing(1),
-  },
+  // avatarSmall: {
+  //   width: theme.spacing(15),
+  //   height: theme.spacing(15),
+  //   margin: theme.spacing(1),
+  // },
   arrow: {
     color: "tomato",
     // backgroundColor:"#551111"
@@ -44,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#511",
     height: "100%",
   },
-  avatar: {
+  avatarLarge: {
     display: "block",
     margin: "0.5rem auto",
     width: theme.spacing(13),
@@ -69,7 +68,7 @@ const Navbar = () => {
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
-      <Avatar className={classes.avatar} src={avatar1} alt="Ananth Ezhumalai"  />
+      <Avatar className={classes.avatarLarge} src={avatar1} alt="Ananth Ezhumalai"  />
       <Divider />
       <List>
         {menuItems.map((item, i) => (
