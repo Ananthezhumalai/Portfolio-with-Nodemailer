@@ -24,11 +24,6 @@ const useStyles = makeStyles((theme) => ({
     background: "#222",
     margin: 0,
   },
-  // avatarSmall: {
-  //   width: theme.spacing(15),
-  //   height: theme.spacing(15),
-  //   margin: theme.spacing(1),
-  // },
   arrow: {
     color: "tomato",
     // backgroundColor:"#551111"
@@ -68,7 +63,7 @@ const Navbar = () => {
     <Box className={classes.menuSliderContainer} component="div">
       <Avatar className={classes.avatarLarge} src={avatar1} alt="Ananth Ezhumalai"  />
       <Divider />
-      <List>
+      {/* <List>
         {menuItems.map((item, i) => (
           <ListItem
             button
@@ -84,7 +79,25 @@ const Navbar = () => {
             <ListItemText primary={item.listText} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
+      <List style={{ display: "flex", flexDirection: "row", padding: 0 }}>
+  {menuItems.map((item, i) => (
+    <ListItem
+      button
+      key={i}
+      className={classes.listItem}
+      onClick={() => setOpen(false)}
+      component={Link}
+      to={item.listPath}
+    >
+      <ListItemIcon className={classes.listItem}>
+        {item.listIcon}
+      </ListItemIcon>
+      <ListItemText primary={item.listText} />
+    </ListItem>
+  ))}
+</List>
+
     </Box>
   );
 
@@ -125,12 +138,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-  {/* <IconButton onClick={() => setOpen(true)}
-              style={{
-                backgroundColor:"#551111"
-              }}> */}
-              {/* <ArrowBack className={classes.arrow} /> */}
-            {/* </IconButton> */}
-            {/* <Typography variant="h5" className={classes.title}>
-              Portfolio
-            </Typography> */}
