@@ -9,13 +9,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
-// import project1 from "../images/html-css-javascript-lg.jpg";
-import project2 from "../images/html-css-javascript.jpg";
-import project7 from "../images/react.svg"
-import project3 from "../images/javascript-fullstack.jpg";
-import project4 from "../images/mern-stack.jpg";
-import project5 from "../images/react-redux.jpg";
 import img from "../images/html,css,js.jpg";
 import Reactjs from "../images/hhhhh.png"
 const useStyles = makeStyles((theme) => ({
