@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: portfolio-backend  # Change to a unique name for your app (e.g., 'my-portfolio-backend')
+    runtime: node
+    rootDir: server  # This tells Render to use the 'server' folder as the root directory
+    buildCommand: npm install  # Installs dependencies from server/package.json
+    startCommand: node server.js  # Replace 'server.js' with your main file (e.g., 'index.js' or 'app.js')
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: EMAIL_USER
+        sync: false  # Set manually in Render dashboard (for security)
+      - key: EMAIL_PASS
+        sync: false  # Set manually in Render dashboard (for security)
+      - key: PORT
+        value: 10000  # Render's default; your code should use process.env.PORT
+    plan: free  # Free tier; upgrade for more resources
+    autoDeploy: true  # Auto-deploys on GitHub pushes

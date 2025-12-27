@@ -145,14 +145,25 @@ const [message, setMessage] = useState("");
     };
   
     try {
-      const response = await fetch("https://deploy-preview-9--ananthezhumalai.netlify.app/send-email", {
+      // const response = await fetch(
+      //   "http://Localhost:5000/send-email",{
+      //   // "https://deploy-preview-9--ananthezhumalai.netlify.app/send-email", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
+  
+      const response = await fetch(
+        // "http://localhost:5001/send-email", {
+        "https://deploy-preview-9--ananthezhumalai.netlify.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-  
       if (response.ok) {
         alert("Message sent successfully!");
         // Reset form fields

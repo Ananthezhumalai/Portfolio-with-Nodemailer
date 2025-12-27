@@ -7,7 +7,8 @@ require("dotenv").config(); // Load environment variables
 const app = express();
 const PORT = process.env.PORT || 5001;
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "https://deploy-preview-9--ananthezhumalai.netlify.app/" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -17,6 +18,9 @@ const transporter = nodemailer.createTransport({
   auth: {
     user: process.env.EMAIL_USER, // Use environment variable
     pass: process.env.EMAIL_PASS, // Use an App Password, NOT your actual password
+  },
+  tls: {
+    rejectUnauthorized: false, // Disable strict SSL checking (temporary fix)
   },
 });
 
