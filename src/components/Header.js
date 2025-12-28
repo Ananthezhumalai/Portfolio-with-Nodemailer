@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Typed from "react-typed";
+import Typed from "typed.js";
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar.png";
 import List from "@material-ui/core/List";
